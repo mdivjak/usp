@@ -3,7 +3,7 @@ import RPi.GPIO as GPIO
 from mfrc522 import SimpleMFRC522
 
 reader = SimpleMFRC522()
-TCP_IP = '192.168.1.101' # IP adresa racunara
+TCP_IP = '192.168.0.32' # IP adresa racunara
 TCP_PORT = 5005
 BUFFER_SIZE = 1024
 

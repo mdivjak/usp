@@ -60,7 +60,7 @@ def clearEntries():
 
 def readFromCard():
 	statusText.set("Reading from Card...")
-	db = mysql.connector.connect(host="localhost", user="root", passwd="", database="mis")
+	db = mysql.connector.connect(host="localhost", user="root", passwd="", database="mis", port="3308")
 	
 	# procitaj id sa kartice
 	statusText.set("Put the card on the reader")
@@ -163,7 +163,7 @@ def writeToCard():
 	cardId.insert(0, id)
 
 	statusText.set("Writing to database...")
-	db = mysql.connector.connect(host="localhost", user="root", passwd="", database="mis")
+	db = mysql.connector.connect(host="localhost", user="root", passwd="", database="mis", port="3308")
 	cursor = db.cursor()
 
 	sqlcheck = """select * from refugee where id=%s"""
@@ -220,7 +220,7 @@ if __name__ == "__main__":
 	statusText.set("Waiting for card reader to connect...")
 	status = Label(window, textvariable=statusText).grid(row = 16,column = 2)
 
-	TCP_IP = '192.168.1.101'
+	TCP_IP = '192.168.0.32'
 	TCP_PORT = 5005
 	BUFFER_SIZE = 1024
 	s = socket.socket()
